@@ -1,0 +1,498 @@
+```css
+/* =========================
+   LEO PASSPORT
+   STYLE SHEET
+========================= */
+
+:root {
+    --navy: #101827;
+    --navy-light: #1b2638;
+    --cream: #f5f0e6;
+    --cream-dark: #e8dfd0;
+    --gold: #b79a5a;
+    --gold-light: #d6bd7b;
+    --white: #ffffff;
+    --text: #18202d;
+    --muted: #77746d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--navy);
+    color: var(--text);
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover-screen {
+    background: var(--navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    color: var(--cream);
+}
+
+.passport-border {
+    width: min(430px, 100%);
+    min-height: 90vh;
+    border: 1px solid rgba(214, 189, 123, 0.45);
+    padding: 55px 35px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.passport-border::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(214, 189, 123, 0.15);
+    pointer-events: none;
+}
+
+.lion {
+    font-size: 52px;
+    margin-bottom: 22px;
+}
+
+.small-label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+}
+
+.cover-screen h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(46px, 14vw, 72px);
+    line-height: 0.88;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.tagline {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 24px;
+    color: var(--cream-dark);
+}
+
+
+/* Passport stamp */
+
+.passport-stamp {
+    width: 125px;
+    height: 125px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    margin: 42px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-8deg);
+    color: var(--gold-light);
+    position: relative;
+}
+
+.passport-stamp::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px dashed var(--gold);
+    border-radius: 50%;
+}
+
+.passport-stamp span {
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.passport-stamp strong {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 7px 0;
+}
+
+
+/* Enter button */
+
+.enter-button {
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--cream);
+    padding: 14px 30px;
+    letter-spacing: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.enter-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.year {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    margin-top: 35px;
+}
+
+
+/* =========================
+   PASSPORT PAGE
+========================= */
+
+.passport-screen {
+    display: none;
+    background: var(--cream);
+    min-height: 100vh;
+    padding: 28px 20px 50px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d7cebe;
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.top-bar h2,
+.section-heading h2,
+.content-section h2 {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.passport-icon {
+    font-size: 30px;
+}
+
+
+/* =========================
+   MEMBER CARD
+========================= */
+
+.member-card {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.8fr;
+    gap: 15px;
+    margin-bottom: 38px;
+}
+
+.member-card h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.member-card p {
+    font-size: 13px;
+}
+
+.member-card .label {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: var(--gold-light);
+}
+
+
+/* =========================
+   STAMP SECTION
+========================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.stamp-count {
+    font-family: Arial, sans-serif;
+    color: var(--gold);
+}
+
+.stamp-count strong {
+    font-size: 25px;
+}
+
+.stamp-count span {
+    font-size: 12px;
+}
+
+
+.stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 55px;
+}
+
+.stamp {
+    aspect-ratio: 1;
+    border: 1px dashed #c6bdad;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.stamp span {
+    font-size: 20px;
+    color: #c7c0b4;
+}
+
+.stamp small {
+    font-family: Arial, sans-serif;
+    font-size: 6px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: #aaa59c;
+}
+
+.stamp.collected {
+    background: var(--navy);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    transform: rotate(-4deg);
+}
+
+.stamp.collected span {
+    color: var(--gold-light);
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+.content-section {
+    margin-bottom: 50px;
+}
+
+.event-card {
+    background: #eee8dc;
+    border: 1px solid #ddd4c5;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+}
+
+.event-date {
+    width: 52px;
+    height: 52px;
+    background: var(--navy);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.event-date strong {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.event-date span {
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-info h3 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.event-info p {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 7px;
+}
+
+.event-info small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    color: #666158;
+}
+
+.arrow {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+
+/* =========================
+   LEO OF THE MONTH
+========================= */
+
+.leo-month {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.leo-person {
+    background: #eee8dc;
+    padding: 18px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+}
+
+.leo-person h3 {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.leo-person p {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #d7cebe;
+    padding-top: 25px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #918c83;
+    line-height: 2;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .cover-screen {
+        padding: 15px;
+    }
+
+    .passport-border {
+        min-height: 94vh;
+        padding: 40px 25px 25px;
+    }
+
+    .stamp-grid {
+        gap: 7px;
+    }
+
+    .stamp small {
+        font-size: 5px;
+    }
+
+    .member-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .member-card > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .leo-month {
+        grid-template-columns: 1fr;
+    }
+
+    .passport-screen {
+        padding: 22px 15px 40px;
+    }
+}
+```
